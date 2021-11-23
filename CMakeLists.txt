@@ -1,36 +1,23 @@
-cmake_minimum_required(VERSION 3.15)
-project(search_engine)
-set(CMAKE_CXX_STANDARD 14)
+cmake_minimum_required(VERSION 3.20)
+project(21f_final_proj_template)
+set(CMAKE_CXX_STANDARD 20)
+add_subdirectory(Tests)
 
-##########################################
-# Students, edit the items below.  In the quotes,
-# put the names of the input files as they should appear
-# in the argv param to main.
-# Example:
-#   set (input01 "train_data.csv")
-#   set (input02 "train_target.csv")
-# etc....
-# if you need more, add them here and in the foreach stmt below.
-set (input01 "")
-set (input02 "")
-set (input03 "")
+#portion included for rapidJSON
+Include(FetchContent)
 
-#
-##########################################
+FetchContent_Declare(
+        rapidjson
+        GIT_REPOSITORY https://github.com/Tencent/rapidjson.git
+        GIT_TAG 0d4517f
+)
 
-# Copy data files to build dir
-foreach(file IN LISTS input01 input02 input03)
-    configure_file(${file} ${file} COPYONLY)
-endforeach()
+FetchContent_MakeAvailable(rapidjson)
+add_library(rapidjson INTERFACE)
+target_include_directories(rapidjson INTERFACE ${rapidjson_SOURCE_DIR})
 
+add_executable(21f_final_proj_template main.cpp AVLTree.h porter2_stemmer.cpp porter2_stemmer.h UserInterface.cpp UserInterface.h SearchEngine.cpp SearchEngine.h IndexHandler.cpp IndexHandler.h DocumentParser.cpp DocumentParser.h Document.cpp Document.h)
 
-# Create the executable for sorting
-add_executable(search_engine main.cpp)
-
-
-
-
-
-
+target_link_libraries(21f_final_proj_template PRIVATE rapidjson)
 
 

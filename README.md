@@ -1,8 +1,12 @@
-# Search Engine (Spring 2021) 
+# Fall 2021 Final Project 
 
-- [Project Handout](https://docs.google.com/document/d/12IeSu8jHuZMUe4wZO8gnNd26-nkpnZIR4sJcYpw8Bdg/edit?usp=sharing)
+## Important:
 
-### Note: 
+- You DO NOT need to implement GitHub Actions for the final project.  
+- DO NOT attempt to push the data set for this project to Github.  
 
-Do not attempt to run large data sets through Github Actions!  You can provide a few sample articles as proof that things are working.  Save the large parsing and indexing for your local machine. 
+## Links:
 
+- [Final Project Handout](https://docs.google.com/document/d/1iKdp9c4WrrGjgHpJKb94H3mZb0PCYJLEV0gCnLe19aw/edit?usp=sharing)
+- [Final Project Slide Deck](https://docs.google.com/presentation/d/1nuay20kigz95I6EUIbpLVTJqALJc-1HoqI1GsgWLWzQ/edit?usp=sharing)
+- Tutorial on RapidJSON by TA Christian > [here](https://github.com/Gouldilocks/rapidTutorial) <. 
